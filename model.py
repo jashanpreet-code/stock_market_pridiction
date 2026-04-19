@@ -9,9 +9,17 @@ import datetime as dt
 import pickle
 import tensorflow as tf
 
+# print(tf.__version__)
 
-data = yf.download('AAPL', start='2010-01-01', end=dt.datetime.now().strftime('%Y-%m-%d'))
-data.to_csv('apple.csv')
-print(data.head())
-print(data.shape)
-print(data.info())
+# data = yf.download('AAPL', start='2010-01-01', end=dt.datetime.now().strftime('%Y-%m-%d'))
+# data.reset_index().to_csv('apple.csv')
+# data.columns = data.columns.droplevel(1)
+
+
+ticker = yf.Ticker('AAPL')
+ticker.info
+# data = ticker.history('max')
+# print(data)
+# print(data.head())
+# print(data.shape)
+# print(data.info())
